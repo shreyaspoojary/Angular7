@@ -1,0 +1,53 @@
+<h3 class="display-4 text-center">Order Management</h3>
+<hr>
+<div *ngIf="!showModal && !isViewOrder">
+    <button (click)="toggleModal()" class="btn btn-secondary">Add Item</button>
+<table  border="1" align='center' width="50"  >  
+    <thead >  
+      <tr>  
+        <th scope="col">orderId</th>  
+        <th scope="col">customerId</th>  
+        <th scope="col">quantity</th>  
+        <th scope="col" >order_address </th>  
+        <th scope="col">order_date_and_time</th> 
+      </tr>
+    </thead>  
+    <tbody>  
+            <tr *ngFor="let p of data"> 
+              <td>{{p.orderId}}</td>     
+              <td>{{p.customerId}}</td>   
+              <td>{{"p.quantity"}}</td>   
+              <td>{{p.order_address}}</td>
+              <td>{{p.order_date_and_time}}</td>
+              <td><button (click)="viewOrder(p.orderId)" class="btn btn-success btn-sm">View Order</button></td>
+              <td><button (click)="onRemove(p.orderId)" class="btn btn-success btn-sm">Remove</button></td>
+                <td><button disabled class="btn btn-success btn-sm" (click)="updateItemHandler(p.orderId)">Update Item</button></td>
+               </tr>
+              <tr>  
+    </tbody>  
+</table>  
+</div>
+<div *ngIf="showModal && !isViewOrder" class="row container-fluid"  id="divshow" >
+        <input type="hidden" name="PMId" [value]="service.formData.PMId">
+        <div class="form-group">
+            <div class="input-group">
+            <label for="exampleFormControlInput1">quantity</label>
+            <input name="CardOwnerName" #CardOwnerName="ngModel" [(ngModel)]="service.formData.quantity" class="form-control"
+                placeholder="quantity" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+            <label for="exampleFormControlInput1">order_address</label>
+            <input name="CardOwnerName" #CardOwnerName="ngModel" [(ngModel)]="service.formData.order_address" class="form-control"
+                placeholder="order_address" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <button  class="btn btn-success btn-lg btn-block" (click)="toggleModal()">Cancel</button>
+            <button class="btn btn-success btn-lg btn-block"  (click)="submitForm()"><i class="fas fa-database"></i> Submit</button>
+        </div>
+</div>
+<div *ngIf="isViewOrder">
+    <order-details [orderId]="orderId"></order-details>
+</div>

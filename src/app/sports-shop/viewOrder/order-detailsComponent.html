@@ -1,0 +1,45 @@
+<h1 class="display-4 text-center">Order Details</h1>
+<hr>
+<div >
+<div>
+    <div>
+        <label>Order ID</label>
+        <h3>{{data.orderId}}</h3>
+    </div> 
+    <div>
+        <label>Order Adress</label>
+        <h3>{{data.order_address}}</h3>
+    </div> 
+    <div>
+        <label>Order Date</label>
+        <h3>{{data.order_date_and_time}}</h3>
+    </div> 
+</div>
+<table  border="1" align='center' width="50"  >  
+    <thead >  
+      <tr>  
+        <th scope="col">orderId</th>  
+        <th scope="col">productId</th>  
+        <th scope="col">quantity</th>  
+        <th scope="col" >colour </th>  
+        <th scope="col">product_name</th> 
+        <th scope="col" >product_prize </th>  
+        <th scope="col">product_sender</th> 
+        <th scope="col" >product_specification </th>  
+      </tr>
+    </thead>  
+    <tbody>  
+            <tr *ngFor="let p of products"> 
+              <td>{{p.orderId}}</td>     
+              <td>{{p.productId}}</td>   
+              <td>{{"p.quantity"}}</td>   
+              <td>{{p.productInfo.colour}}</td>
+              <td>{{p.productInfo.product_name}}</td>
+              <td>{{p.productInfo.product_prize}}</td>
+              <td>{{p.productInfo.product_sender}}</td>
+              <td>{{p.productInfo.product_specification}}</td>
+               </tr>
+              <tr>  
+    </tbody>  
+</table>  
+</div>

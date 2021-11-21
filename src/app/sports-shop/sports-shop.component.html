@@ -1,0 +1,27 @@
+<div class="">
+        <div>
+          <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">WebSiteName</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li class= "tabName === 'USER_MNG' ? 'active' : 'inactive'" (click)="handleTabChange('USER_MNG')">
+                  <a href="#">
+                   User Management</a>
+                  </li>
+                  <li class= "tabName === 'ITEM_MNG' ? 'active' : 'inactive'">
+                  <a href="#" (click)="handleTabChange('ITEM_MNG')">Item Management</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        <div *ngIf="tabName === 'USER_MNG'">
+          <user-list></user-list>
+        </div>
+        <div *ngIf="tabName === 'ITEM_MNG'">
+          <item-list></item-list>
+        </div>
+      
+  </div>
