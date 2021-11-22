@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center">
+          <h1 style="color: #fff;margin-top: 10px">Sports Store</h1>
+          <h2 style="color: #fff;margin-top: 10px">Login</h2>
+          <h6 style="color: #fff;margin-top: 10px">Please Enter Email and Password!</h6>
+        </div>
+        <form>
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" style="color: #fff;margin-top: 10px" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" style="color: #fff;margin-top: 10px" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+
+            <button type="submit" style="color: #fff;margin-top: 10px" class="btn btn-primary" [routerLink]="['/order-management']" routerLinkActive="router-link-active" >Login</button>
+            <br><br>
+            <a style="color: #fff;margin-top: 10px" routerLink="/signup">New user? Click here to sign up!</a>
+          </form>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
