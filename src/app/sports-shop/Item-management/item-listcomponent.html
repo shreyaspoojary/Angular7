@@ -1,7 +1,6 @@
-<h1 class="display-4 text-center">Item Management</h1>
-<hr>
-<div *ngIf="!showModal">
-    <button (click)="toggleModal()" class="btn btn-secondary">Add Item</button>
+<h1 class="display-4 text-center"style="color: blue;">Item Management</h1>
+<hr><div *ngIf="!showModal">
+    <button (click)="toggleModal()" class="btn btn-secondary"style="color: green;">Add Item</button>
 <table  border="1" align='center' width="50"  >  
     <thead >  
       <tr>  
@@ -12,16 +11,16 @@
         <th scope="col">product_specification</th>  
       </tr>  
     </thead>  
-    <tbody>  
+    <tbody style="background-color: rgb(108, 138, 163);">  
             <tr *ngFor="let p of items"> 
               <td>{{p.product_name}}</td>     
-              <td>{{p.colour}}</td>   
+              <td>{{p.colour    }}</td>   
               <td>{{p.product_prize}}</td>   
               <td>{{p.product_sender}}</td>
               <td>{{p.product_specification}}</td>
               <button (click)="onRemove(p.productId)" class="btn btn-success btn-sm">Remove</button>
                 <button  class="btn btn-success btn-sm" (click)="updateItemHandler(p.productId)">Update Item</button>
-                <td> <img src="https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?cs=srgb&dl=pexels-pixabay-39284.jpg&fm=jpg" width="150" height="150" > </td>   
+                <td> <img src="https://thumbs.dreamstime.com/b/sports-equipment-assorted-including-basketball-soccer-ball-tennis-ball-baseball-tennis-racket-football-birdie-badminton-racket-43938756.jpg" width="150" height="150" > </td>   
               </tr>
               <tr>  
     </tbody>  
@@ -65,7 +64,7 @@
                 placeholder="Item Name" required>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" style="  align-self: center; border: 5px;position: relative;top:  10ex;left: -100ex;">
             <button  class="btn btn-success btn-lg btn-block" (click)="toggleModal()">Cancel</button>
             <button class="btn btn-success btn-lg btn-block"  (click)="submitForm()"><i class="fas fa-database"></i> Submit</button>
         </div>

@@ -1,6 +1,7 @@
 <h3 class="display-4 text-center">User Management</h3>
 <hr>
 <div *ngIf="!showModal && !isViewUserOrder">
+    <button (click)="toggleModal()" class="btn btn-secondary">Add User</button>
 <table  border="1" align='center' width="50"  >  
     <thead >  
       <tr>  
@@ -12,7 +13,7 @@
         <th scope="col">customer_state</th>
       </tr>  
     </thead>  
-    <tbody>  
+    <tbody style="background-color: rgb(108, 138, 163);">  
             <tr *ngFor="let p of data"> 
               <td>{{p.customer_firstname}}</td>     
               <td>{{p.customer_lastname}}</td>   
@@ -20,60 +21,62 @@
               <td>{{p.customer_email}}</td>
               <td>{{p.customer_location}}</td>
               <td>{{p.customer_state}}</td>
-              <button (click)="onRemove(p.customerId)" class="btn btn-success btn-sm  mx-4 my-4">Remove User</button>
+             <td> <button (click)="onRemove(p.customerId)" class="btn btn-success btn-sm  mx-4 my-4">Remove User</button>
                 <button  class="btn btn-success btn-sm  mx-4 my-4" (click)="updateItemHandler(p.customerId)">Update User</button>
-                <button  class="btn btn-success btn-sm  mx-4 my-4" (click)="viewUserOrder(p.customerId)">View User Orders</button>
+                <button  class="btn btn-success btn-sm  mx-4 my-4" (click)="viewUserOrder(p.customerId)">View User Orders</button></td>
+                <td> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgnsvxrhVdb6Ex6N3v6V1tm2NZiL9CAQZnurkfC_D3JDZzB3qbAQXZZZMEr-fkbisedt0&usqp=CAU" width="150" height="150" > </td>
                </tr>
               <tr>  
     </tbody>  
 </table>  
 </div>
-<div *ngIf="showModal && !isViewUserOrder" class="row container-fluid"  id="divshow" >
+
+<div  *ngIf="showModal && !isViewUserOrder" class="row container-fluid"  id="divshow" >
         <input type="hidden" name="PMId" [value]="service.formData.PMId">
-        <div class="form-group">
+        <div style="background-color: rgb(231, 175, 210);align-self: center;"class="form-group">
             <div class="input-group">
             <label for="exampleFormControlInput1">First Name</label>
             <input name="CardOwnerName" #CardOwnerName="ngModel" [(ngModel)]="service.formData.customer_firstname" class="form-control"
                 placeholder="First Name" required>
             </div>
         </div>
-        <div class="form-group">
+        <div style="background-color: rgb(231, 175, 210);align-self: center;"class="form-group">
             <div class="input-group">
             <label for="exampleFormControlInput1">Last Name</label>
             <input name="CardOwnerName" #CardOwnerName="ngModel" [(ngModel)]="service.formData.customer_lastname" class="form-control"
                 placeholder="Last Name" required>
             </div>
         </div>
-        <div class="form-group">
+        <div style="background-color: rgb(231, 175, 210);align-self: center;"class="form-group">
             <div class="input-group">
             <label for="exampleFormControlInput1">Phone Number</label>
             <input name="CardOwnerName" #CardOwnerName="ngModel" [(ngModel)]="service.formData.customer_phoneNo" class="form-control"
                 placeholder="Phone Number" required>
             </div>
         </div>
-        <div class="form-group">
+        <div style="background-color: rgb(231, 175, 210);align-self: center;"class="form-group">
             <div class="input-group">
             <label for="exampleFormControlInput1">Email</label>
             <input name="CardOwnerName" #CardOwnerName="ngModel" [(ngModel)]="service.formData.customer_email" class="form-control"
                 placeholder="Email" required>
             </div>
         </div>
-        <div class="form-group">
+        <div style="background-color: rgb(231, 175, 210);align-self: center;"class="form-group">
             <div class="input-group">
             <label for="exampleFormControlInput1">Location</label>
             <input name="CardOwnerName" #CardOwnerName="ngModel" [(ngModel)]="service.formData.customer_location" class="form-control"
                 placeholder="Location" required>
             </div>
         </div>
-        <div class="form-group">
+        <div style="background-color: rgb(231, 175, 210);align-self: center;"class="form-group">
             <div class="input-group">
             <label for="exampleFormControlInput1">State</label>
             <input name="CardOwnerName" #CardOwnerName="ngModel" [(ngModel)]="service.formData.customer_state" class="form-control"
                 placeholder="State" required>
             </div>
         </div>
-        <div class="form-group">
-            <button  class="btn btn-success btn-lg btn-block" (click)="toggleModal()">Cancel</button>
+        <div class="form-group"style="  align-self: center; border: 5px;position: relative;top:  15ex;left: -100ex;">
+            <button  class="btn btn-success btn-lg btn-block" (click)="toggleModal()" >Cancel</button>
             <button class="btn btn-success btn-lg btn-block"  (click)="submitForm()"><i class="fas fa-database"></i> Submit</button>
         </div>
 </div>
